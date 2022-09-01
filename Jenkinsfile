@@ -48,7 +48,7 @@ pipeline {
                     values_path="values.yaml"
                     kubectl get ns minio || kubectl create ns minio
                     helm repo add minio $helm_repo && \
-                   helm install minio bitnami/minio -f $values_path --namespace minio --wait
+                   helm install minio bitnami/minio -f $values_path --namespace minio --version 11.9.1 --wait
                   '''
                 }
                 catch (Exception errorlogs) {
